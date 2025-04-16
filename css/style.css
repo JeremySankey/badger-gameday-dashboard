@@ -1,0 +1,73 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 10;
+  text-align: center;
+  padding: 10px 0;
+  border-bottom: 2px solid #c5050c;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  color: #c5050c;
+  margin: 0;
+  padding: 20px;
+  background-color: white; /* ✅ Set actual page background to white */
+  position: relative;
+  z-index: 1;
+}
+
+/* ✅ Background logo layer */
+body::before {
+  content: "";
+  background: url("../wisconsin-badgers-2-logo-png-transparent.png") no-repeat center center;
+  background-size: contain;
+  opacity: 0.25; /* 25% visible = 75% dimmed */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  padding-top: 120px; /* Adjust based on header height */
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+section {
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #c5050c;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.85); /* subtle white overlay */
+}
+
+.news-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.news-column {
+  flex: 1 1 45%;
+  min-width: 300px;
+}
+
+.news-column > div {
+  margin-bottom: 1rem;
+}
